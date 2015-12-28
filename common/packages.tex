@@ -24,5 +24,10 @@
 \usepackage{pgfplots}
 \usepackage{tikzscale}
 
-\pgfplotsset{compat=newest} % Allows to place the legend below plot
 \usepgfplotslibrary{units} % Allows to enter the units nicely
+
+\pgfplotsset{
+  compat=newest,
+  xlabel near ticks,
+  ylabel near ticks
+}
