@@ -1,2 +1,83 @@
 \section{Usage}
 \label{sec:Usage}
+The utilisation of the implemented programs is quite straightforward. No additional command needs to be entered, because every program has a build file. For example, with the implementation in the Go language, the initial arborescence (the one before compilation) is the following :
+
+\begin{figure}[H]
+\dirtree {%
+.1 ..
+.1 src.
+	.2 levenshtein.
+		.3 dynamic\_levenshtein\_distance\_technique.go.
+		.3 levenshtein\_distance\_calculator.go.
+		.3 levenshtein\_distance\_technique.go.
+		.3 recursive\_levenshtein\_distance\_technique.go.
+	.2 levenshtein\_test.
+    	.3 levenshtein\_test.go.
+    .2 main.
+		.3 main.go.
+}
+\end{figure}
+
+After setting the \verb+$GOPATH+ environment variable (needed by the Go compiler to find the module) to the project root folder (\verb+gc-levenshtein/go/+), you have to compile the program by executing the command \verb+go install main+.
+\par Two new folders will be generated : one for the packages (\verb+pkg/+) and another one for the binaries (\verb+main+). In our context, the package is \verb+levenshtein+ and the binary is \verb+main+.
+
+\begin{figure}[H]
+\dirtree {%
+.1 ..
+.1 bin.
+	.2 main.
+.1 pkg.
+	.2 linux\_amd64.
+		.3 levenshtein.a.
+.1 src.
+	.2 levenshtein.
+		.3 dynamic\_levenshtein\_distance\_technique.go.
+		.3 levenshtein\_distance\_calculator.go.less
+		.3 levenshtein\_distance\_technique.go.
+		.3 recursive\_levenshtein\_distance\_technique.go.
+	.2 levenshtein\_test.
+    	.3 levenshtein\_test.go.
+    .2 main.
+		.3 main.go.
+}
+\end{figure}
+
+To run the program, just launch the binary file with the name of the file containing the words as an argument. For example : \verb+./bin/main ../dictionary_EN.txt+. The following output (truncated) will be produced in the standard output :
+
+\begin{lstlisting}[breaklines]
+
+...
+
+Word1 : micropipette
+Word2 : microprocessing
+Recursive distance : 8
+Dynamic distance : 8
+
+Word1 : microprocessor
+Word2 : microprocessors
+Recursive distance : 1
+Dynamic distance : 1
+
+Word1 : microprogram
+Word2 : microprogrammed
+Recursive distance : 3
+Dynamic distance : 3
+
+Word1 : microprogramming
+Word2 : microradiographical
+Recursive distance : 9
+Dynamic distance : 9
+
+Word1 : microradiographically
+Word2 : microradiography
+Recursive distance : 5
+Dynamic distance : 5
+
+Word1 : micros
+Word2 : microscope
+Recursive distance : 4
+Dynamic distance : 4
+
+...
+
+\end{lstlisting}

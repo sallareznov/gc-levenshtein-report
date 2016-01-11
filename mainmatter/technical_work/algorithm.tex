@@ -1,5 +1,7 @@
 \section{Algorithm}
 \label{sec:Algorithm}
+
+The algorithm is summarized by this flowchart :
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.7]{flowchart.png}
@@ -7,12 +9,10 @@
 \label{fig:flowchart}
 \end{figure}
 
+Two versions of the algorithm have been implemented : a recursive version and a version using dynamic programming (iterative).
 
-
+\bigskip
 \SetKwProg{Fn}{Function}{}{}
-
-
-
 \begin{algorithm}[H]
 \Fn{recursiveLevenshteinDistance{(word1 : String, word2 : String)}}{
 \If{word1 == word2}{
