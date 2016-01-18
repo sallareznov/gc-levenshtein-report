@@ -1,8 +1,12 @@
 \section{Algorithm}
 \label{sec:Algorithm}
 
-The algorithm is summarized by this flowchart :
-\begin{figure}[!h]
+	For the credibility of the measures made, the algorithm involves two I/O aspects : file reading, and printing. First, the algorithm performs file reading by retrieving words in a dictionary of words. File reading operations can be an important factor in energy consommation, as well as printing on the standard output.
+	
+	The pathway of the algorithm is : opening a text file containing thousands of words, read every two consecutive word, print them and print the Levenshtein distances calculated with a recursive technique and a technique using dynamic programming (iterative). 
+
+The algorithm is summarized by the following flowchart :
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{flowchart.png}
 \caption{Flowchart of the algorithm}
