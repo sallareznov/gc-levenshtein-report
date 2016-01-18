@@ -2,3 +2,10 @@
 \label{ch:Conclusion}
 	\thispagestyle{conclusion}
 	\addcontentsline{toc}{chapter}{Conclusion}
+	
+	In order to compare energy consumptions of different languages, the Levenshtein distance algorithm has been implemented in each, and results are measured and compared by PowerAPI, a middleware toolkit for software-defined power meters \cite{powerapi-website}.
+	
+	The result is the languages have slightly the same time-dependent energy consumption. But if the execution time of each program is taken into account, Scala and Java, JVM-based languages, are faster and consume less energy (respectively 406 and 418 Joules), and Ocaml, Python and Ruby are the greediest ones (the recursive version of the algorithm taking time to compute [respectively 3408, 4753 and 5778 Joules]).
+	
+	Therefore, it is plausible to conclude that, unlike received ideas, the Java Virtual Machine, is very performant, at least on I/O intensive algorithms \cite{poorjvm}.
+	
